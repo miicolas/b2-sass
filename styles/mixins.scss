@@ -1,0 +1,29 @@
+@use 'variables';
+
+@mixin button($color) {
+  display: flex;
+  align-items: center;
+  background-color: $color;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5rem;
+  gap: 1rem;
+  height: 100%;
+  @if ($color == variables.$primary-color-dark-blue) {
+    border: 1px solid $color;
+    &:hover {
+      background-color: white;
+      color: variables.$primary-color-dark-blue;
+      border: 1px solid variables.$primary-color-dark-blue;
+    }
+  } @else {
+    border: 1px solid variables.$primary-color-dark-blue;
+    color: variables.$primary-color-dark-blue;
+    background-color: $color;
+    &:hover {
+      background-color: variables.$primary-color-dark-blue;
+      color: white;
+    }
+  }
+}
